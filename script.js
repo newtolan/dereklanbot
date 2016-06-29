@@ -16,11 +16,11 @@ module.exports = new Script({
     },
 
     askName: {
-        prompt: (bot) => bot.say('What\'s your name?'),
+        prompt: (bot) => bot.say('你叫米Q名啊?'),
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(`Great! I'll call you ${name}
+                .then(() => bot.say(`讲真，你条名都几普通下! 不过尊重你老豆，我就叫你 ${name}
 Is that OK? %[Yes](postback:yes) %[No](postback:no)`))
                 .then(() => 'finish');
         }
@@ -29,8 +29,8 @@ Is that OK? %[Yes](postback:yes) %[No](postback:no)`))
     finish: {
         receive: (bot, message) => {
             return bot.getProp('name')
-                .then((name) => bot.say(`Sorry ${name}, my creator didn't ` +
-                        'teach me how to do anything else!'))
+                .then((name) => bot.say(`Sorry ${name}, 我老细无教我点复你呢个问题喔 ` +
+                        '有本事，你教下我咯!'))
                 .then(() => 'finish');
         }
     }
