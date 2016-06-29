@@ -21,7 +21,7 @@ module.exports = new Script({
             const name = message.text;
             return bot.setProp('name', name)
                 .then(() => bot.say(`讲真，你条名都几普通下! 不过尊重你老豆，我就叫你 ${name}
-Is that OK? %[Yes](postback:yes) %[No](postback:no)`))
+OK唔ok? %[Yes](回复:yes) %[No](回复:no)`))
                 .then(() => 'finish');
         }
     },
